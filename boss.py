@@ -661,8 +661,9 @@ def entrar_assertiva():
             driver.find_element(By.XPATH, "//button[span/text()='CONSULTAR']").click()
 
             nome_elem = WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, ".jss456"))
+                EC.presence_of_element_located((By.ID, "identificacao-cadastral-name"))
             )
+
             driver.execute_script("arguments[0].scrollIntoView(true);", nome_elem)
             nome = nome_elem.text.strip()
 
